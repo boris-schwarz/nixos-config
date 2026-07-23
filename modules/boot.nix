@@ -1,6 +1,6 @@
-{...}:
+{ ... }:
 {
-	# use systemd-boot efi bootloader
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
+  # use systemd-boot efi bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 }
