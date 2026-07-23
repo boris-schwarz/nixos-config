@@ -5,12 +5,6 @@
     git
   ];
 
-  # programs with their own NixOS module
+  # programs with their own nixos module
   programs.firefox.enable = true;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-  };
 }
