@@ -8,7 +8,6 @@
 		./locale.nix
 		./desktop.nix
 		./users.nix
-		./git.nix
 		./packages.nix
 	];
 }
