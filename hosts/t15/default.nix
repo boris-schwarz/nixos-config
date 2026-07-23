@@ -1,11 +1,11 @@
 { ... }:
 
 {
-	imports = [
-		./hardware-configuration.nix
-		../../modules
-	];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules
+  ];
 
-	networking.hostName = "t15";
-	system.stateVersion = "26.05";
+  networking.hostName = "t15";
+  system.stateVersion = "26.05";
 }
