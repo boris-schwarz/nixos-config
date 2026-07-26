@@ -20,7 +20,7 @@
     ];
 
     # Lua config
-    extraLuaConfig = ''
+    initLua = ''
       -- Leader key
       vim.g.mapleader = " "
 

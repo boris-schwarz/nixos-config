@@ -8,8 +8,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Boris Schwarz";
-    userEmail = "13311628+boris-schwarz@users.noreply.github.com";
+    settings = {
+      user = {
+        name = "Boris Schwarz";
+        email = "13311628+boris-schwarz@users.noreply.github.com";
+      };
+    };
   };
 
   # overrides of ./common
