@@ -3,6 +3,7 @@
 {
   programs.kitty = {
     enable = true;
+    themeFile = "Catppuccin-Mocha";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 14;
@@ -13,6 +14,12 @@
       scrollback_lines = 10000;
       enable_audio_bell = "no";
       enabled_layouts = "splits,stack";
+      window_padding_width = "0 20";
+      draw_minimal_borders = "no";
+      active_border_color = "#ff5500";
+      inactive_text_alpha = "0.5";
+      window_border_width = "1pt";
+      background = "#11111b";
     };
     keybindings = {
       "ctrl+shift+right" = "launch --location=vsplit --cwd=current";
