@@ -26,6 +26,9 @@
       vim.opt.list = true
       vim.opt.listchars = { tab = "» ", space = "·", trail = "·", nbsp = "␣" }
 
+      -- Enable 24 bit color
+      vim.opt.termguicolors = true
+
       -- Indentation: two spaces
       vim.opt.expandtab = true
       vim.opt.shiftwidth = 2
