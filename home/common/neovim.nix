@@ -31,6 +31,9 @@
       vim.opt.shiftwidth = 2
       vim.opt.tabstop = 2
       vim.opt.softtabstop = 2
+
+      -- Hide built-in mode, replaced by lua line
+      vim.opt.showmode = false
     '';
 
     # Plugins
@@ -57,6 +60,19 @@
 
           vim.keymap.set("n", "<leader>tt", "<cmd>Neotree toggle<cr>", { desc = "Toggle file tree" })
           vim.keymap.set("n", "<leader>tf", "<cmd>Neotree position=current<cr>", { desc = "File tree (full window)" })
+        '';
+      }
+      # status line
+      {
+        plugin = pkgs.vimPlugins.lualine-nvim;
+        type = "lua";
+        config = ''
+          require("lualine").setup({
+            options = {
+              theme = "auto",
+              globalstatus = true,
+            },
+          })
         '';
       }
       # nixfmt
