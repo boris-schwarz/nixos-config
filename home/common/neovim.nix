@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   programs.neovim = {
@@ -8,7 +11,11 @@
     vimAlias = true;
 
     # Make the nixfmt binary available to neovim.
-    extraPackages = [ pkgs.nixfmt ];
+    extraPackages = [
+      pkgs.nixfmt
+      pkgs.ripgrep
+      pkgs.fd
+    ];
 
     # Lua config
     extraLuaConfig = ''
@@ -65,6 +72,18 @@
           vim.keymap.set("n", "<leader>tf", "<cmd>Neotree position=current<cr>", { desc = "File tree (full window)" })
         '';
       }
+      # Telescope
+      {
+        plugin = pkgs.vimPlugins.telescope-nvim;
+        type = "lua";
+        config = ''
+          local builtin = require("telescope.builtin")
+          vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+          vim.keymap.set("n", "<leader>fg", builtin.live_grep,  { desc = "Grep in files" })
+          vim.keymap.set("n", "<leader>fb", builtin.buffers,    { desc = "Open buffers" })
+          vim.keymap.set("n", "<leader>fh", builtin.help_tags,  { desc = "Search help" })
+        '';
+      }
       # status line
       {
         plugin = pkgs.vimPlugins.lualine-nvim;
@@ -91,6 +110,35 @@
               timeout_ms = 2000,
               lsp_format = "fallback",
             },
+          })
+        '';
+      }
+      # Treesitter
+      {
+        plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
+          p.nix
+          p.lua
+          p.rust
+          p.bash
+          # data
+          p.json
+          p.toml
+          p.yaml
+          p.markdown
+          p.markdown_inline
+          # web
+          p.html
+          p.css
+          p.javascript
+          p.typescript
+          p.tsx
+        ]);
+        type = "lua";
+        config = ''
+          vim.api.nvim_create_autocmd("FileType", {
+            callback = function()
+              pcall(vim.treesitter.start)
+            end,
           })
         '';
       }
