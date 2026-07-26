@@ -12,6 +12,12 @@
 
     # Lua config
     extraLuaConfig = ''
+      -- Leader key
+      vim.g.mapleader = " "
+
+      -- Disable netrw
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
       -- Line numbers: absolute on the current line, relative on the others
       vim.opt.number = true
       vim.opt.relativenumber = true
@@ -29,6 +35,31 @@
 
     # Plugins
     plugins = [
+      pkgs.vimPlugins.plenary-nvim
+      pkgs.vimPlugins.nui-nvim
+      pkgs.vimPlugins.nvim-web-devicons
+      # file tree
+      {
+        plugin = pkgs.vimPlugins.neo-tree-nvim;
+        type = "lua";
+        config = ''
+          require("neo-tree").setup({
+            close_if_last_window = true,
+            filesystem = {
+              follow_current_file = { enabled = true },
+              use_libuv_file_watcher = true,
+            },
+            window = {
+              position = "left",
+              width = 30,
+            },
+          })
+
+          vim.keymap.set("n", "<leader>tt", "<cmd>Neotree toggle<cr>", { desc = "Toggle file tree" })
+          vim.keymap.set("n", "<leader>tf", "<cmd>Neotree position=current<cr>", { desc = "File tree (full window)" })
+        '';
+      }
+      # nixfmt
       {
         plugin = pkgs.vimPlugins.conform-nvim;
         type = "lua";
