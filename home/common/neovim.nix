@@ -15,6 +15,8 @@
       pkgs.nixfmt
       pkgs.ripgrep
       pkgs.fd
+      pkgs.nixd
+      pkgs.lua-language-server
     ];
 
     # Lua config
@@ -138,6 +140,31 @@
           vim.api.nvim_create_autocmd("FileType", {
             callback = function()
               pcall(vim.treesitter.start)
+            end,
+          })
+        '';
+      }
+      # LSP
+      {
+        plugin = pkgs.vimPlugins.nvim-lspconfig;
+        type = "lua";
+        config = ''
+          vim.lsp.enable({ "rust_analyzer", "nixd", "lua_ls" })
+
+          -- Show diagnostic messages inline at the end of the line
+          vim.diagnostic.config({ virtual_text = true })
+
+          -- Keymaps, set only once a server actually attaches to a buffer
+          vim.api.nvim_create_autocmd("LspAttach", {
+            callback = function(args)
+              local opts = { buffer = args.buf }
+              vim.keymap.set("n", "gd", vim.lsp.buf.definition,  opts)  -- go to definition
+              vim.keymap.set("n", "gr", vim.lsp.buf.references,  opts)  -- find references
+              vim.keymap.set("n", "K",  vim.lsp.buf.hover,       opts)  -- hover docs
+              vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename,      opts)  -- rename symbol
+              vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)  -- code actions
+              vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
+              vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count =  1, float = true }) end, opts)
             end,
           })
         '';
