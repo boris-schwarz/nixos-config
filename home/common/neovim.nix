@@ -99,6 +99,21 @@
           })
         '';
       }
+      # which-key
+      {
+        plugin = pkgs.vimPlugins.which-key-nvim;
+        type = "lua";
+        config = ''
+          local wk = require("which-key")
+          wk.setup({})
+
+          -- Label your prefix groups so the popup reads nicely
+          wk.add({
+            { "<leader>t", group = "tree" },
+            { "<leader>f", group = "find" },
+          })
+        '';
+      }
       # nixfmt
       {
         plugin = pkgs.vimPlugins.conform-nvim;
