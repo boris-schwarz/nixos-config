@@ -17,7 +17,8 @@
       window_padding_width = "0 20";
       draw_minimal_borders = "no";
       active_border_color = "#ff5500";
-      inactive_text_alpha = "0.5";
+      inactive_border_color = "#313244";
+      inactive_text_alpha = "1.0";
       window_border_width = "1pt";
       background = "#11111b";
     };

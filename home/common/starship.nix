@@ -3,8 +3,6 @@
 {
   programs.starship = {
     enable = true;
-    settings = {
-      add_newline = true;
-    };
+    settings = fromTOML (builtins.readFile ./starship-catppuccin.toml);
   };
 }
