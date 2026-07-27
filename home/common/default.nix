@@ -6,6 +6,7 @@
     ./kitty.nix
     ./starship.nix
     ./fonts.nix
+    ./plasma.nix
     ./neovim.nix
     ./zed.nix
     ./rust.nix
