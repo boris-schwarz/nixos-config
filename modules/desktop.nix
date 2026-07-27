@@ -1,6 +1,9 @@
 { ... }: {
   services.xserver.enable = true; # enable X11 windowing system
-  services.displayManager.sddm.enable = true; # sddm login screen
+  services.displayManager.sddm = {
+    enable = true;
+    settings.General.Numlock = "on";
+  };
   services.desktopManager.plasma6.enable = true; # plasma 6 desktop
   services.xserver.xkb = {
     layout = "ch";
