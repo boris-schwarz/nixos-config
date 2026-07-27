@@ -7,6 +7,7 @@
     ./starship.nix
     ./fonts.nix
     ./neovim.nix
+    ./zed.nix
     ./rust.nix
   ];
 
