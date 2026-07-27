@@ -13,8 +13,8 @@
     userSettings = {
       theme = "Catppuccin Mocha";
       buffer_font_family = "JetBrainsMono Nerd Font";
-      buffer_font_size = 20;
-      ui_font_size = 22;
+      buffer_font_size = 16;
+      ui_font_size = 18;
       vim_mode = true;
       project_panel = {
         dock = "left";

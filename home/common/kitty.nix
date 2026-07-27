@@ -6,7 +6,7 @@
     themeFile = "Catppuccin-Mocha";
     font = {
       name = "JetBrainsMono Nerd Font";
-      size = 14;
+      size = 12;
     };
     settings = {
       tab_bar_edge = "top";
