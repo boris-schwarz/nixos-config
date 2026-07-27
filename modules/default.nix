@@ -9,5 +9,6 @@
     ./desktop.nix
     ./users.nix
     ./packages.nix
+    ./docker.nix
   ];
 }
