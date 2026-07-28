@@ -65,9 +65,9 @@ nix-rebuild
 
 ### Reverting
 ```bash
-sudo nixos-rebuild switch --rollback
-git revert <commit>
-nix-rebuild
+sudo nixos-rebuild switch --rollback    # boot the previous generation
+git revert <commit>                     # undo the bad change
+nix-rebuild                             # rebuild from the fixed config
 ```
 
 ### Cleanup
