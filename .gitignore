@@ -1,3 +1,4 @@
 # build output symlinks created by `nix build`
 result
 result-*
+.obsidian/

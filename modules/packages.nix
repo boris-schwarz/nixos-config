@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     claude-code
     git
+    obsidian
   ];
 
   # programs with their own nixos module
