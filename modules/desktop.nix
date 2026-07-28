@@ -1,15 +1,20 @@
-{ ... }: {
-  services.xserver.enable = true; # enable X11 windowing system
+{
+  ...
+}:
+{
+  # enable X11 windowing system
+  services.xserver.enable = true;
+
   services.displayManager.sddm = {
     enable = true;
     settings.General.Numlock = "on";
   };
-  services.desktopManager.plasma6.enable = true; # plasma 6 desktop
-  services.xserver.xkb = {
-    layout = "ch";
-    variant = "de_nodeadkeys";
-  }; # keyboard layout
-  services.printing.enable = true; # cups printing support
+
+  # plasma 6 desktop
+  services.desktopManager.plasma6.enable = true;
+
+  # cups printing support
+  services.printing.enable = true;
 
   # audio via pipewire (replaces pulseaudio)
   services.pulseaudio.enable = false;
