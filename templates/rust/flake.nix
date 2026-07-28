@@ -23,7 +23,9 @@
           gcc
 
           # add project-specifics here, e.g.:
-          # openssl
+          # pkg-config  # locates C libraries at build time
+          # openssl     # for native-tls db connections
+          # sqlx-cli    # sqlx cli for migrations
         ];
 
         RUST_BACKTRACE = 1;
