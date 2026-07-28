@@ -9,6 +9,10 @@
   networking.hostName = "t15";
   system.stateVersion = "26.05";
 
+  # use systemd-boot efi bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   # keyboard layout
   services.xserver.xkb = {
     layout = "ch";
