@@ -5,8 +5,16 @@
     enable = true;
     shellAliases = {
       nix-edit = "nvim ~/nixos-config";
-      nix-rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#t15";
-      nix-test = "sudo nixos-rebuild test --flake ~/nixos-config#t15";
     };
+    initExtra = ''
+      nix-rebuild() {
+        echo "+ sudo nixos-rebuild switch --flake ~/nixos-config#t15"
+        sudo nixos-rebuild switch --flake ~/nixos-config#t15
+      }
+      nix-test() {
+        echo "+ sudo nixos-rebuild test --flake ~/nixos-config#t15"
+        sudo nixos-rebuild test --flake ~/nixos-config#t15
+      }
+    '';
   };
 }
