@@ -24,6 +24,9 @@
       -- Leader key
       vim.g.mapleader = " "
 
+      -- Use the system clipboard
+      vim.opt.clipboard = "unnamedplus"
+
       -- Disable netrw
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1

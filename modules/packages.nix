@@ -4,6 +4,7 @@
     claude-code
     git
     obsidian
+    wl-clipboard
   ];
 
   # programs with their own nixos module
