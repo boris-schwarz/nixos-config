@@ -10,6 +10,7 @@
     ./neovim.nix
     ./zed.nix
     ./rust.nix
+    ./direnv.nix
   ];
 
   home.stateVersion = "26.05";
