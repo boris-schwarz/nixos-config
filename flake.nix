@@ -23,6 +23,7 @@
     }@inputs:
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+
       nixosConfigurations.t15 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -38,6 +39,11 @@
             home-manager.users.boris = import ./home/boris.nix;
           }
         ];
+      };
+
+      templates.rust = {
+        path = ./templates/rust;
+        description = "Rust project with a Nix dev shell + direnv";
       };
     };
 }
