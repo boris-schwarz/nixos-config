@@ -5,6 +5,7 @@
     git
     obsidian
     wl-clipboard
+    prismlauncher
   ];
 
   # programs with their own nixos module
