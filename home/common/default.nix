@@ -7,7 +7,7 @@
     ./starship.nix
     ./fonts.nix
     ./plasma.nix
-    ./neovim.nix
+    ./neovim/default.nix
     ./zed.nix
     ./rust.nix
     ./direnv.nix
