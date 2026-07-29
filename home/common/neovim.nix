@@ -233,6 +233,15 @@
         '';
       }
 
+      # autopairs (closes brackes, quotes, parens)
+      {
+        plugin = pkgs.vimPlugins.nvim-autopairs;
+        type = "lua";
+        config = ''
+          require("nvim-autopairs").setup({})
+        '';
+      }
+
     ];
   };
 }
