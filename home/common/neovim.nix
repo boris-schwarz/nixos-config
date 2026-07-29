@@ -242,6 +242,15 @@
         '';
       }
 
+      # surround (surround words with characters, e.g. parenthesis)
+      {
+        plugin = pkgs.vimPlugins.nvim-surround;
+        type = "lua";
+        config = ''
+          require("nvim-surround").setup({})
+        '';
+      }
+
     ];
   };
 }
