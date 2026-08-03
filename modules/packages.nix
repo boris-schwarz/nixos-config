@@ -3,9 +3,7 @@
   environment.systemPackages = with pkgs; [
     claude-code
     git
-    obsidian
     wl-clipboard
-    prismlauncher
   ];
 
   # programs with their own nixos module

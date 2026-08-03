@@ -1,10 +1,19 @@
-{ ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   imports = [ ./common ];
 
   home.username = "boris";
   home.homeDirectory = "/home/boris";
+
+  # user specific packages
+  home.packages = with pkgs; [
+    obsidian
+    prismlauncher
+  ];
 
   programs.git = {
     enable = true;
