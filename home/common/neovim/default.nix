@@ -5,6 +5,7 @@
 {
   imports = [
     ./autopairs.nix
+    ./bufferline.nix
     ./conform.nix
     ./gitsigns.nix
     ./lsp.nix

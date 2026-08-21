@@ -23,6 +23,9 @@
       background = "#11111b";
     };
     keybindings = {
+      # emit CSI-u codes so neovim can distinguish ctrl+tab / ctrl+shift+tab
+      "ctrl+tab" = "send_text all \\x1b[9;5u";
+      "ctrl+shift+tab" = "send_text all \\x1b[9;6u";
       "ctrl+shift+right" = "launch --location=vsplit --cwd=current";
       "ctrl+shift+down" = "launch --location=hsplit --cwd=current";
       "ctrl+shift+h" = "neighboring_window left";

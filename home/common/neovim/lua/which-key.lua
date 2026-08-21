@@ -8,3 +8,8 @@ wk.add({
   { "<leader>g", group = "git" },
   { "<leader>b", group = "buffer" },
 })
+
+-- hide the <leader>1..9 "go to buffer N" maps from the popup
+for i = 1, 9 do
+  wk.add({ { "<leader>" .. i, hidden = true } })
+end

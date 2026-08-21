@@ -7,6 +7,10 @@ require("neo-tree").setup({
   window = {
     position = "left",
     width = 30,
+    mappings = {
+      -- free up <space> (our leader) inside the tree; use <cr> to expand/collapse
+      ["<space>"] = "none",
+    },
   },
 })
 
