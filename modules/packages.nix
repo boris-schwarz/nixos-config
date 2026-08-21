@@ -2,7 +2,6 @@
   # system-wide packages
   environment.systemPackages = with pkgs; [
     claude-code
-    git
     wl-clipboard
   ];
 
