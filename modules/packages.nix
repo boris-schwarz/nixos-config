@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   # system-wide packages
   environment.systemPackages = with pkgs; [
-    claude-code
     wl-clipboard
   ];
 

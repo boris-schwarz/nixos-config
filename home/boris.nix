@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     obsidian
     prismlauncher
+    claude-code
   ];
 
   programs.git = {
