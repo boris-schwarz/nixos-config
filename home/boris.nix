@@ -10,13 +10,15 @@
   home.username = "boris";
   home.homeDirectory = "/home/boris";
 
-  # user specific packages
+  # user specific packages with no specific setup
   home.packages = with pkgs; [
     obsidian
     prismlauncher
     claude-code
+    thunderbird
   ];
 
+  # git config
   programs.git = {
     enable = true;
     settings = {
