@@ -16,6 +16,7 @@
     prismlauncher
     claude-code
     thunderbird
+    libreoffice
   ];
 
   # git config
