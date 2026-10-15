@@ -4,6 +4,15 @@
   ...
 }:
 
+let
+  # claude-code from pinned nixpkgs-master (mods need >= 2.1.287; the
+  # nixos-26.05 channel only has 2.1.187). Imported with allowUnfree because
+  # Claude Code is proprietary.
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs) system;
+    config.allowUnfree = true;
+  };
+in
 {
   imports = [ ./common ];
 
@@ -14,7 +23,7 @@
   home.packages = with pkgs; [
     obsidian
     prismlauncher
-    claude-code
+    pkgsUnstable.claude-code # mods-capable build; see let-binding above
     thunderbird
     libreoffice
   ];

@@ -3,6 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    # Pinned nixpkgs-master commit carrying claude-code 2.1.292.
+    # The nixos-26.05 release channel only has 2.1.187, but Claude Code mods
+    # need >= 2.1.287, so claude-code is pulled from here (see home/boris.nix).
+    # To roll forward later: bump this to a newer master commit, or switch the
+    # ref to "nixos-unstable" for rolling updates, then `nix flake update`.
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/7017219973bcbe11c1aebaf48f1ec80212e09428";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";

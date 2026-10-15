@@ -55,6 +55,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1791351984,
+        "narHash": "sha256-0g5HKaT2uYpxQTi4DoJSPMCSrQNg2yaPaB114FIy3kc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7017219973bcbe11c1aebaf48f1ec80212e09428",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7017219973bcbe11c1aebaf48f1ec80212e09428",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1784432872,
@@ -99,6 +115,7 @@
         "ergonotify": "ergonotify",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-unstable": "nixpkgs-unstable",
         "plasma-manager": "plasma-manager"
       }
     }
