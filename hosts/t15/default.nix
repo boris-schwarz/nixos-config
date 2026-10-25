@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ../../modules
+    ../../modules/nix-ld.nix
   ];
 
   networking.hostName = "t15";
