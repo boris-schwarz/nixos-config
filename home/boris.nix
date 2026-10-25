@@ -19,11 +19,6 @@ in
   home.username = "boris";
   home.homeDirectory = "/home/boris";
 
-  # only log real starship errors, not the slow-command timeout warnings
-  home.sessionVariables = {
-    STARSHIP_LOG = "error";
-  };
-
   # user specific packages with no specific setup
   home.packages = with pkgs; [
     obsidian
