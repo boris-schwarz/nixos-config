@@ -26,6 +26,11 @@ in
     pkgsUnstable.claude-code # mods-capable build; see let-binding above
     thunderbird
     libreoffice
+
+    # gaming (Battle.net / WoW via Lutris)
+    lutris
+    winetricks
+    mangohud
   ];
 
   # git config

@@ -83,3 +83,15 @@ Delete home-manager generations older than 2 weeks
 ```bash
 nix-collect-garbage --delete-older-than 14d
 ```
+
+## Manual steps
+
+### Mail
+- Open Tunderbird and set up your e-mail account
+
+### Gaming
+- Open Lutris and search Battle.net
+- Run the installer
+- At the login prompt, close it, let Lutris finish, reopen, signin
+- Install game -> Enable discrete GPU in the game's Lutris options -> tick GameMode
+- Launch
