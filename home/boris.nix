@@ -31,6 +31,7 @@ in
     lutris
     winetricks
     mangohud
+    wowup-cf
   ];
 
   # git config
