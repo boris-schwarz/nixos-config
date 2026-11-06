@@ -26,6 +26,8 @@ in
     pkgsUnstable.claude-code # mods-capable build; see let-binding above
     thunderbird
     libreoffice
+    qalculate-gtk
+    libqalculate
 
     # gaming (Battle.net / WoW via Lutris)
     lutris
@@ -33,6 +35,16 @@ in
     mangohud
     wowup-cf
   ];
+
+  xdg.desktopEntries.calculator = {
+    name = "Calculator";
+    exec = "qalculate-gtk";
+    icon = "qalculate";
+    categories = [ "Utility" ];
+    settings = {
+      Keywords = "calc;calculator;qalculate;";
+    };
+  };
 
   # git config
   programs.git = {
