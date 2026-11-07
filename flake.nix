@@ -54,5 +54,10 @@
         path = ./templates/rust;
         description = "Rust project with a Nix dev shell + direnv";
       };
+
+      templates.java-spring = {
+        path = ./templates/java-spring;
+        description = "Spring Boot (Gradle/Kotlin DSL, JDK 21) dev shell + direnv";
+      };
     };
 }
